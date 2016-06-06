@@ -1,0 +1,83 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>新闻详情</title>
+    <link href="~/Content/CSS/tableStyle.css" rel="stylesheet" />
+    <link href="~/Content/CSS/pageBar.css" rel="stylesheet" />
+    <link href="~/Content/themes/default/easyui.css" rel="stylesheet" />
+    <link href="~/Content/themes/icon.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.7.1.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/jquery.easyui.min.js"></script>
+    <script src="~/Scripts/easyui-lang-zh_CN.js"></script>
+    <script src="~/Scripts/MyAjaxForm.js"></script>
+    <script type="text/javascript">
+
+        $(function () {
+            fileUpload();
+        });
+        function fileUpload() {
+            $("#btnFileUp").click(function () {
+                if ($("#fileUpImage").val() == "") {   //判断用户有没有选择
+                    $.messager.alert("提示", "请选择上传的图片文件", "info");
+                    return;
+                }
+                $("#form1").ajaxSubmit({   //异步提交表单文件
+                    type: "post",
+                    url: "/AdminNewsList/FileUpload",
+                    success: function (data) {  //上传成功 即回调函数
+                        var serverData = data.split(':');
+                        if (serverData[0] == "ok") {
+                            $("#hidImagePath").val(serverData[1]);//将路径赋值给了隐藏域，提交表单时将提交到服务端保存到数据库.
+                            $("#showImage").append("<img src='" + serverData[1] + "' width='40px' height='40px'/>");  //追加一个图片显示到div
+                        } else {
+                            $.messager.alert("提示", serverData[1], "info");
+                        }
+                    }
+                });
+            });
+        }
+        function subForm() {  //提交表单
+            $("#form1").submit();
+        }
+        function afterAdd(data) {  //子窗体调用父窗体
+
+            window.parent.afterAdd(data);
+
+        }
+
+    </script>
+</head>
+<body>
+    <div id="divAdd">
+        @using (Ajax.BeginForm("AddNewsInfo", "AdminNewsList", new AjaxOptions() { HttpMethod = "post", OnSuccess = "afterAdd" }, new { id = "form1" }))  //表单异步提交
+        {
+            <table>
+                <tr><td>新闻名称</td><td><input type="text" name="Title" /></td></tr>
+                <tr><td>作者</td><td><input type="text" name="Author" /></td></tr>
+                <tr>
+                    <td>上传图片</td>
+                    <td>
+                        <input type="file" name="fileUp" id="fileUpImage" />
+                        <input type="button" value="上传图片" id="btnFileUp" />
+                        <input type="hidden" id="hidImagePath" name="ImagePath" /> @*把图片路径付给隐藏域*@
+                        <div id="showImage">
+                            @*将上传的图片在div中显示出来*@
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>新闻内容</td>
+                    <td><textarea cols="100" rows="8" name="Msg" style="width:500px;height:200px;"></textarea></td>
+                </tr>
+            </table>
+        }
+    </div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    <link href="~/Content/CSS/Index.css" rel="stylesheet" />
+
+}
+@using Model;
+@section Show{
+    <script src="Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Content/JS/Index.js"></script>
+    <div id="ShowImg">
+        <div id="Nav">
+            <ul>
+                <!--这里的url属性和n属性是我自己添加的，为了编程方便，标签本身是没有这些属性的，注意这里的url根据自己放置图片的实际位置设置值-->
+                <li url="~/Image/1.jpg" n="0" style="color: rgb(255, 255, 255); font-weight: bolder; ">1</li>
+                <li url="~/Image/2.jpg" n="1">2</li>
+                <li url="~/Image/3.jpg" n="2">3</li>
+                <li url="~/Image/4.jpg" n="3">4</li>
+            </ul>
+            <input type="hidden" name="name" id="flag" value="1" />
+        </div>
+    </div>
+    <div class="showmain">
+        <div class="two">
+            <div class="left">
+                <div class="panel"><h2><a href="#"><span>More>></span></a>资讯披露</h2></div>
+                <div class="show">
+                    <div class="logo"><img src="~/Image/nopic.jpg" /></div>
+                    <div class="show1">
+                        <ol>
+                            <li><a href="#">利郎携手“不朽不朽的梵高的梵高”...</a></li>
+                            <li><a href="#">利郎2015春季不朽的梵高系列-汲取...</a></li>
+                            <li><a href="#">利郎携手陈道明不朽的梵高开启北欧...</a></li>
+                            <li><a href="#">利郎11月剪不朽的梵高报..</a></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <div class="panel"><h2><a href="/NewsListWithBar/Index"><span>More>></span></a>新闻中心</h2></div>
+                <div class="show2">
+                    <ul>
+                        @if (ViewData["list"] != null)
+                        {
+                            foreach (NewsInfo newInfo in (List<NewsInfo>)ViewData["list"])
+                            {
+                                <li><a href="/NewsList/ShowDetail/?id=@newInfo.Id">@newInfo.Title</a><span>@newInfo.SubDateTime.ToShortDateString()</span></li>
+                            }
+                        }
+                        else
+                        {
+                            <span>暂无数据</span>
+                        }
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <div class="one">
+            <a href="#"><img src="~/Image/index_30.jpg" /></a>
+            <a href="#"><img src="~/Image/index_28.jpg" /></a>
+            <a href="#"><img src="~/Image/index_29.jpg" /></a>
+        </div>
+    </div>
+}

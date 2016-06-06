@@ -1,0 +1,31 @@
+﻿        .all {
+            margin: 0 auto;
+            width: 960px;
+        }
+
+        .banben {
+            width: 960px;
+            height: 22px;
+            float: right;
+            text-align: right;
+        }
+
+            .banben a {
+                color: #666666;
+                font-size: 13px;
+                text-decoration: none;
+            }
+
+        table {
+            float: right;
+            font-family: 'Microsoft YaHei';
+            height: 50px;
+            width: 450px;
+            text-align: right;
+        }
+
+            table a {
+                color: #E5E5E5;
+                font-size: 15px;
+                text-decoration: none;
+            }

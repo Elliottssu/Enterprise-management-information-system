@@ -1,0 +1,164 @@
+﻿        .all{
+            margin:0 auto;
+            width:960px;
+        }
+        .banben {
+            width:960px;
+            height: 22px;
+            float:right;
+            text-align:right;
+         }
+        .banben a{
+            color:#666666;
+            font-size:13px;
+            text-decoration:none;
+        }
+        table{
+            float:right;
+            font-family:'Microsoft YaHei';
+            height:50px;
+            width:450px;
+            text-align:right;
+        }
+        table a{
+             color:#E5E5E5;
+             font-size:15px;
+             text-decoration:none;
+        }
+           /*展示图片切换的div样式*/
+         #ShowImg {
+             width: 960px;
+             height: 500px;
+             background-image: url("~/Image/1.jpg");/*注意自己的图片路径和图片名称*/
+             margin: 0 auto;
+         }
+         /*显示点击切换按钮的div*/
+         #Nav {
+            height: 26px;
+            padding-top: 460px;
+            padding-left: 820px;
+            
+        }
+        /*这里是切换按钮，这里用li实现*/
+         #Nav ul li {
+            display: block;
+            font-size: 9px;
+            padding-top: 3px;
+            float: left;
+            margin: 2px;
+            width: 19px;
+            cursor: pointer;
+            color: #666666;
+            font-family: "arial";
+            height: 15px;
+            background-color: #2E3132;
+            text-align: center;
+        }
+         .showmain{
+             width:960px;
+             margin:30px auto 0 auto;
+             overflow:hidden;
+             padding-bottom:15px;
+             border-bottom:1px dashed #333333;
+         }
+         .two{
+             width:750px;
+             height:172px;
+             float:left;
+         }
+         .one{
+             width:175px;
+             height:181px;
+             float:right;
+             margin-left: 0px;
+             margin-top:6px;
+         }
+         .left{
+             width:350px;
+             height:172px;
+             float:left;
+         }
+         .right{
+             width:350px;
+             height:172px;
+             float:right;
+         }
+         .panel{
+             width: 350px;
+             margin-top: 20px;
+         }
+         .panel h2{
+              background:url("~/images/lilanz_title.gif") no-repeat;
+              width:334px;
+              height:24px;
+              border-bottom:1px solid #3a3a3a;
+              color:#999;
+              padding-left:16px;
+              line-height:16px;
+          }
+         .panel h2 span{
+              display:block;
+              float:right;
+              font-size:12px;
+              font-weight:400;
+              color:#999;
+          }
+         .logo{
+             width:117px;
+             height:68px;
+             float:left;
+             margin-top:35px;
+             margin-left:5px;
+         }
+          .one img{
+              margin:2px 3px 3px 3px;
+             height: 49px;
+             width: 164px;
+         }
+         .show1{
+             float:right;
+             width:225px;
+             height:112px;
+         }
+         ol{
+         width:200px;
+         margin-top:0px;
+         margin-right:10px;
+         float:left;
+        }
+          ol li{
+             height:28px;
+             line-height:28px;
+             width:190px;
+             overflow:hidden;
+             background:url("~/Image/lilanz_listing.gif") no-repeat left center;
+             padding-left:10px;
+         }
+          ol li a{
+              text-decoration:none;
+              color:#999999;
+               font-size:9px;
+          }
+          .show2 ul{
+           margin:15px 10px 0 5px;
+           width:auto;
+           height:28px;
+           line-height:28px;
+        }
+          .show2 ul li{
+             background:url("~/Image/lilanz_listing.gif") no-repeat left center;
+             padding-left:10px;
+        }
+            .show2 ul li a {
+                text-decoration: none;
+                color: #999999;
+                font-size:9px;
+            }
+         .show2 ul span{
+            float:right;
+            color:#999;
+            display:block;
+            float:right;
+            font-size:12px;
+            font-weight:400;
+        }

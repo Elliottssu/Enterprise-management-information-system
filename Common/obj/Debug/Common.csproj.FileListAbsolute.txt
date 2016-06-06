@@ -1,0 +1,5 @@
+C:\Users\Lianggang\Desktop\企业管理信息系统课程设计\EnterpriseManagementInformationSystem\Common\bin\Debug\Common.dll
+C:\Users\Lianggang\Desktop\企业管理信息系统课程设计\EnterpriseManagementInformationSystem\Common\bin\Debug\Common.pdb
+C:\Users\Lianggang\Desktop\企业管理信息系统课程设计\EnterpriseManagementInformationSystem\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+C:\Users\Lianggang\Desktop\企业管理信息系统课程设计\EnterpriseManagementInformationSystem\Common\obj\Debug\Common.dll
+C:\Users\Lianggang\Desktop\企业管理信息系统课程设计\EnterpriseManagementInformationSystem\Common\obj\Debug\Common.pdb

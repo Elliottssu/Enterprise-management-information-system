@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/CSS/Layout.css" rel="stylesheet" />
+</head>
+<body style="background-color:#000000">
+    @RenderBody()
+    <div class="all">
+        <div class="banben">
+            <a href="#">English</a>
+            <a href="#">天猫旗舰店</a>
+        </div>
+        <div style="float:left">
+            <img src="~/Image/Logo.gif" />
+        </div>
+        <table>
+            <tr>
+                <td><a href="/NewsList/Index">首页</a></td>
+                <td><a href="#">百年利郎</a></td>
+                <td><a href="/NewsListWithBar/Index">新闻中心</a></td>
+                <td><a href="#">定制团购</a></td>
+                <td><a href="#">加盟合作</a></td>
+                <td><a href="#">联系服务</a></td>
+            </tr>
+        </table><br /><br /><br /><br />
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("Show", required: false)
+        <div class="foot">
+            <p style="text-align:center ; color:#C2C2C2;font-size:10px">利郎(中国)有限公司&copy 版权所有</p>
+        </div>
+</div>
+</body>
+</html>

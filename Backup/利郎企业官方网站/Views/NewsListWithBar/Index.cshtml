@@ -1,0 +1,143 @@
+﻿@{
+    ViewBag.Title = "NewsList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using Model
+@using Common
+@section Show{
+    <style type="text/css">
+        .title {
+            width: 960px;
+            margin: 0 auto;
+            height: 50px;
+            line-height: 50px;
+            color: #666;
+        }
+
+            .title a {
+                color: #666666;
+                font-size: 15px;
+                text-decoration: none;
+            }
+
+        .main {
+            width: 958px;
+            margin: 0 auto;
+            border: 1px solid #1a1a1a;
+            background: #0d0d0d;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        .main_title {
+            background: url("~/Image/lilanz_title.gif") no-repeat;
+            height: 24px;
+            border-bottom: 1px solid #3a3a3a;
+            color: #999;
+            padding-left: 16px;
+            line-height: 16px;
+        }
+        .main_main {
+            width: 910px;
+            height: 120px;
+            border-bottom: 1px solid #3a3a3a;
+            margin-left:23px;
+        }
+        .main_main img{
+            width:120px;
+            height:78px;
+            float:left;
+            margin-left:15px;
+            margin-top:20px;
+            margin-bottom:20px;
+        }
+        .main_right{
+            width:755px;
+            height:83px;
+            margin-top:20px;
+            float:left;
+        }
+        .top{
+            height:24px;
+            margin-left:10px;
+        }
+        .title1 {
+            width: 450px;
+            color: #C2C2C2;
+            color: #999999;
+            font-family:'Microsoft YaHei';
+            font-size:14px;
+        }
+        .date {
+            width:100px;
+            float:right;
+            font-size: 10px;
+            text-align: right;
+            display: block;
+            padding-right: 5px;
+            color: #CCCCCC;
+        }
+        .news {
+            width: 645px;
+            padding-left: 20px;
+            color: #C2C2C2;
+            margin-left: 10px;
+            color: #999999;
+        }
+        .detail {
+            float:right;
+            width: 79px;
+            height: 48px;
+            color: #999999;
+        }
+            .detail a {
+                color: #999999;
+                text-decoration: none;
+                font-size:10px;
+            }
+        .page {
+            text-align: center;
+            font-size: 18px;
+            text-decoration: none;
+            color: #CCCCCC;
+            
+        }
+        .page a{
+            text-align: center;
+            font-size: 18px;
+            text-decoration: none;
+            color: #666666;
+            
+        }
+    </style>
+    <div>
+        <img src="~/Image/newsimg.jpg" />
+    </div>
+    <div class="title">
+        当前位置;
+        <a href="/NewsList/Index">首页</a>
+        >
+        <a href="#">新闻中心</a>
+    </div>
+    <div class="main">
+        <div class="main_title"><h2>新闻中心</h2></div>
+         @if (ViewData["list"] != null) { 
+             foreach (NewsInfo newInfo in (List<NewsInfo>)ViewData["list"])
+                            {
+        <div class="main_main">
+            <img src="@MvcHtmlString.Create(newInfo.ImagePath)" />
+            <div class="main_right">
+                <div class="top">
+                    <div class="title1">&nbsp;&nbsp;@newInfo.Title</div>
+                    <div class="date" >@newInfo.SubDateTime.ToShortDateString()</div>
+               </div>
+                <span class="news">@newInfo.Msg</span>
+                <div class="detail"><a href="/NewsList/ShowDetail/?id=@newInfo.Id">>>详细内容</a></div>
+            </div>
+        </div>
+         }
+         }
+    </div>
+    <div class="page">
+        @MvcHtmlString.Create( PageBar.GetPageBar(ViewBag.PageIndex,ViewBag.PageCount))
+    </div>}

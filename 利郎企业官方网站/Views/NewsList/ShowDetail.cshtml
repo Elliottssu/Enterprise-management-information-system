@@ -1,0 +1,81 @@
+﻿@{
+    ViewBag.Title = "ShowDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model Model.NewsInfo  
+@section Show{
+    <style type="text/css">
+        .title {
+            width: 960px;
+            margin: 0 auto;
+            height: 50px;
+            line-height: 50px;
+            color: #666;
+        }
+            .title a {
+                color: #666666;
+                font-size: 15px;
+                text-decoration: none;
+            }
+        .main {
+            width: 958px;
+            margin: 0 auto;
+            border: 1px solid #1a1a1a;
+            background: #0d0d0d;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+        .main_title {
+            background: url("~/Image/lilanz_title.gif") no-repeat;
+            height: 24px;
+            border-bottom: 1px solid #3a3a3a;
+            color: #999;
+            padding-left: 16px;
+            line-height: 16px;
+        }
+        .main_main {
+            margin-top: 20px;
+        }
+        h3 {
+            text-align: center;
+            font-size: 14px;
+            font-weight: normal;
+            color: #C2C2C2;
+        }
+        .date {
+            font-size: 12px;
+            text-align: right;
+            display: block;
+            padding-right: 5px;
+            border-bottom: 1px solid #333;
+            color: #C2C2C2;
+        }
+        .main_main img {
+            border: 1px solid #333;
+            margin: 20px auto 10px;
+            display: block;
+        }
+        p {
+            color: #C2C2C2;
+        }
+    </style>
+    <div>
+        <img src="~/Image/newsimg.jpg" /></div>
+    <div class="title">
+        当前位置;
+        <a href="/NewsList/Index">首页</a>
+        >
+        <a href="#">新闻中心</a>
+    </div>
+    <div class="main">
+        <div class="main_title"><h2>新闻正文</h2></div>
+        <div class="main_main">
+            <h3>@Model.Title</h3>
+            <span class="date">作者：@Model.Author   时间：  @Model.SubDateTime.ToShortDateString()</span>
+            <div>
+            <img src="@MvcHtmlString.Create( Model.ImagePath)" />
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Model.Msg</p>
+        </div>
+        </div>
+    </div>
+    }

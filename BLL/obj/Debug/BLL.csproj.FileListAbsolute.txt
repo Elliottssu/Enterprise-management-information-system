@@ -1,0 +1,9 @@
+C:\Users\Lianggang\Desktop\企业管理信息系统课程设计\EnterpriseManagementInformationSystem\BLL\bin\Debug\BLL.dll
+C:\Users\Lianggang\Desktop\企业管理信息系统课程设计\EnterpriseManagementInformationSystem\BLL\bin\Debug\BLL.pdb
+C:\Users\Lianggang\Desktop\企业管理信息系统课程设计\EnterpriseManagementInformationSystem\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\Lianggang\Desktop\企业管理信息系统课程设计\EnterpriseManagementInformationSystem\BLL\obj\Debug\BLL.dll
+C:\Users\Lianggang\Desktop\企业管理信息系统课程设计\EnterpriseManagementInformationSystem\BLL\obj\Debug\BLL.pdb
+C:\Users\Lianggang\Desktop\企业管理信息系统课程设计\EnterpriseManagementInformationSystem\BLL\bin\Debug\DAL.dll
+C:\Users\Lianggang\Desktop\企业管理信息系统课程设计\EnterpriseManagementInformationSystem\BLL\bin\Debug\Model.dll
+C:\Users\Lianggang\Desktop\企业管理信息系统课程设计\EnterpriseManagementInformationSystem\BLL\bin\Debug\DAL.pdb
+C:\Users\Lianggang\Desktop\企业管理信息系统课程设计\EnterpriseManagementInformationSystem\BLL\bin\Debug\Model.pdb
